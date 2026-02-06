@@ -9,3 +9,5 @@ As a player, I want to see distinct item entries for Green Firewood, Seasoned Fi
 - [ ] `ThingDef` for Charcoal exists.
 - [ ] All fuels are grouped under a new `ThingCategoryDef` (RimWood_Fuel).
 - [ ] Materials have appropriate weights and stack sizes per the design doc.
+- [ ] Market values reflect labor/time (Seasoned > Green > Raw).
+- [ ] Flammability is correctly set to match vanilla wood (1.0).

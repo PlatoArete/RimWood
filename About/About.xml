@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <name>RimWood</name>
+  <author>PlatoArete</author>
+  <packageId>platoarete.rimwood</packageId>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <modVersion>0.1.0</modVersion>
+  <description>Improve the realism and gameplay of fires and fuel in RimWorld without micromanagement or undermining early-game pressure. The mod introduces a fuel processing chain that rewards planning and infrastructure investment while keeping the early game scrappy and survival-focused.</description>
+</ModMetaData>

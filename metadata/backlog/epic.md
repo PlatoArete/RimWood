@@ -11,10 +11,10 @@ This epic tracks the end-to-end implementation of the RimWood mod, from initial 
 
 ## Phase 1: Foundation & MVP Materials (Current Focus)
 
-### [ ] Task 1: Project Scaffolding
-- [ ] Create folder structure: `About/`, `Defs/`, `Assemblies/`, `Source/`, `Textures/`.
-- [ ] Create `About.xml` with mod metadata.
-- [ ] Create `LoadFolders.xml` if needed.
+### [x] Task 1: Project Scaffolding
+- [x] Create folder structure: `About/`, `Defs/`, `Assemblies/`, `Source/`, `Textures/`.
+- [x] Create `About.xml` with mod metadata.
+- [x] Create `LoadFolders.xml` if needed.
 
 ### [ ] Task 2: Basic Fuel Materials (XML)
 - [ ] Define `Green Firewood` (ThingDef).

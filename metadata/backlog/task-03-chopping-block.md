@@ -6,5 +6,6 @@ As a player, I want to process logs into Green Firewood at a Chopping Block so I
 ## Acceptance Criteria
 - [ ] `BuildingDef` for Chopping Block exists.
 - [ ] Recipe `Logs -> Green Firewood` is functional.
+- [ ] Recipe `Logs -> Wood Fibre Pads` exists (placeholder, results in wood logs for now).
 - [ ] Chopping Block is available from the start (no research).
 - [ ] Recipe requires a pawn to perform work.
