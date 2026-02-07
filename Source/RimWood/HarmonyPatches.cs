@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using HarmonyLib;
 using RimWorld;
 using Verse;
@@ -8,8 +10,8 @@ namespace RimWood
     /// Harmony patches for RimWood mod.
     /// Prevents deterioration of items that are actively seasoning.
     /// </summary>
-    [HarmonyPatch(typeof(SteadyEnvironmentEffects))]
-    [HarmonyPatch(nameof(SteadyEnvironmentEffects.FinalDeteriorationRate))]
+    [HarmonyPatch(typeof(SteadyEnvironmentEffects), nameof(SteadyEnvironmentEffects.FinalDeteriorationRate))]
+    [HarmonyPatch(new Type[] { typeof(Thing), typeof(bool), typeof(TerrainDef), typeof(List<Thing>) })]
     public static class SteadyEnvironmentEffects_FinalDeteriorationRate_Patch
     {
         /// <summary>
