@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingCategoryDef>
+    <defName>RimWood_Fuel</defName>
+    <label>RimWood fuel</label>
+    <parent>Manufactured</parent>
+    <iconPath>UI/Icons/ThingCategories/ResourcesIcons</iconPath>
+  </ThingCategoryDef>
+</Defs>

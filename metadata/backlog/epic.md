@@ -16,11 +16,11 @@ This epic tracks the end-to-end implementation of the RimWood mod, from initial 
 - [x] Create `About.xml` with mod metadata.
 - [x] Create `LoadFolders.xml` if needed.
 
-### [ ] Task 2: Basic Fuel Materials (XML)
-- [ ] Define `Green Firewood` (ThingDef).
-- [ ] Define `Seasoned Firewood` (ThingDef).
-- [ ] Define `Charcoal` (ThingDef).
-- [ ] Define `RimWood_Fuel` (ThingCategoryDef).
+### [x] Task 2: Basic Fuel Materials (XML)
+- [x] Define `Green Firewood` (ThingDef).
+- [x] Define `Seasoned Firewood` (ThingDef).
+- [x] Define `Charcoal` (ThingDef).
+- [x] Define `RimWood_Fuel` (ThingCategoryDef).
 
 ### [ ] Task 3: The Chopping Block (XML)
 - [ ] Define `ChoppingBlock` (BuildingDef).

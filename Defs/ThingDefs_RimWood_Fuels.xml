@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Green Firewood -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>RimWood_GreenFirewood</defName>
+    <label>green firewood</label>
+    <description>Freshly cut firewood that has not yet seasoned. Burns with the same efficiency as seasoned wood but produces smoke and soot. Requires time to dry before becoming clean-burning seasoned firewood.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/WoodLog</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <MarketValue>2.5</MarketValue>
+      <Mass>0.38</Mass>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>2.0</DeteriorationRate>
+    </statBases>
+    <thingCategories>
+      <li>RimWood_Fuel</li>
+    </thingCategories>
+    <stackLimit>150</stackLimit>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <useHitPoints>true</useHitPoints>
+  </ThingDef>
+
+  <!-- Seasoned Firewood -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>RimWood_SeasonedFirewood</defName>
+    <label>seasoned firewood</label>
+    <description>Properly dried and seasoned firewood. Burns cleanly and efficiently with no smoke or soot production. The standard fuel for heating and cooking.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/WoodLog</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <MarketValue>4.0</MarketValue>
+      <Mass>0.30</Mass>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>1.0</DeteriorationRate>
+    </statBases>
+    <thingCategories>
+      <li>RimWood_Fuel</li>
+    </thingCategories>
+    <stackLimit>150</stackLimit>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <useHitPoints>true</useHitPoints>
+  </ThingDef>
+
+  <!-- Charcoal -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>RimWood_Charcoal</defName>
+    <label>charcoal</label>
+    <description>High-quality fuel produced by processing seasoned firewood in an earth kiln. Burns much longer than wood with no smoke. Lightweight and compact, making it ideal for caravans and long-term storage.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/WoodLog</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+      <color>(0.2, 0.2, 0.2)</color>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <MarketValue>10.0</MarketValue>
+      <Mass>0.15</Mass>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>0.5</DeteriorationRate>
+    </statBases>
+    <thingCategories>
+      <li>RimWood_Fuel</li>
+    </thingCategories>
+    <stackLimit>200</stackLimit>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <useHitPoints>true</useHitPoints>
+  </ThingDef>
+
+</Defs>
