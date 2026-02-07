@@ -22,10 +22,10 @@ This epic tracks the end-to-end implementation of the RimWood mod, from initial 
 - [x] Define `Charcoal` (ThingDef).
 - [x] Define `RimWood_Fuel` (ThingCategoryDef).
 
-### [ ] Task 3: The Chopping Block (XML)
-- [ ] Define `ChoppingBlock` (BuildingDef).
-- [ ] Create Recipe: `Logs -> Green Firewood`.
-- [ ] Create Recipe: `Logs -> Wood Fibre Pads` (Placeholder for Phase 2).
+### [x] Task 3: The Chopping Block (XML)
+- [x] Define `ChoppingBlock` (BuildingDef).
+- [x] Create Recipe: `Logs -> Green Firewood`.
+- [x] Create Recipe: `Logs -> Wood Fibre Pads` (Placeholder for Phase 2).
 
 ---
 

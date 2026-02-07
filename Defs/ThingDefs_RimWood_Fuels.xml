@@ -74,4 +74,28 @@
     <useHitPoints>true</useHitPoints>
   </ThingDef>
 
+  <!-- Wood Fibre Pad -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>RimWood_WoodFibrePad</defName>
+    <label>wood fibre pad</label>
+    <description>Processed wood fibres formed into absorbent pads. Used as evaporative cooling medium in passive coolers.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/WoodLog</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>60</MaxHitPoints>
+      <MarketValue>3.0</MarketValue>
+      <Mass>0.35</Mass>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>1.5</DeteriorationRate>
+    </statBases>
+    <thingCategories>
+      <li>RimWood_Fuel</li>
+    </thingCategories>
+    <stackLimit>150</stackLimit>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <useHitPoints>true</useHitPoints>
+  </ThingDef>
+
 </Defs>

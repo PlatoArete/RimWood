@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Recipe: Logs to Green Firewood -->
+  <RecipeDef>
+    <defName>RimWood_MakeGreenFirewood</defName>
+    <label>process logs into green firewood</label>
+    <description>Process wood logs into green firewood. The firewood will need to season before burning cleanly.</description>
+    <jobString>Processing logs into firewood.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cutstone</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workAmount>450</workAmount>
+    <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>WoodLog</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <RimWood_GreenFirewood>10</RimWood_GreenFirewood>
+    </products>
+    <workSkill>Crafting</workSkill>
+    <recipeUsers>
+      <li>RimWood_ChoppingBlock</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <!-- Recipe: Logs to Wood Fibre Pads -->
+  <RecipeDef>
+    <defName>RimWood_MakeWoodFibrePads</defName>
+    <label>process logs into wood fibre pads</label>
+    <description>Process wood logs into absorbent wood fibre pads for use in passive coolers.</description>
+    <jobString>Processing logs into fibre pads.</jobString>
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cutstone</effectWorking>
+    <soundWorking>Recipe_Machining</soundWorking>
+    <workAmount>450</workAmount>
+    <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>WoodLog</li>
+          </thingDefs>
+        </filter>
+        <count>5</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>WoodLog</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <RimWood_WoodFibrePad>10</RimWood_WoodFibrePad>
+    </products>
+    <workSkill>Crafting</workSkill>
+    <recipeUsers>
+      <li>RimWood_ChoppingBlock</li>
+    </recipeUsers>
+  </RecipeDef>
+
+</Defs>
