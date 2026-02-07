@@ -62,8 +62,9 @@ namespace RimWood
         /// Gets the method multiplier based on storage location.
         /// MVP: Returns 1.0f if roofed (stockpile baseline), 0.0f if unroofed (stalled).
         /// TODO (Task 5): Detect Woodpile (1.5x) and Woodshed (2.5x) buildings.
+        /// Public visibility required for Harmony patch to check if item is actively seasoning.
         /// </summary>
-        private float GetMethodMultiplier()
+        public float GetMethodMultiplier()
         {
             // Check if item is roofed
             if (parent.Spawned && parent.Map.roofGrid.Roofed(parent.Position))

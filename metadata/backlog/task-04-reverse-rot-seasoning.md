@@ -13,3 +13,4 @@ As a player, I want Green Firewood to eventually turn into Seasoned Firewood whi
 - [ ] Inspection string shows percentage and days remaining; if stalled by roof, shows: "Seasoning: [X]% - Stalled (Unsheltered)".
 - [ ] Merging stacks averages seasoning progress based on stack count.
 - [ ] Green Firewood transforms into Seasoned Firewood (1:1 ratio) upon 100% progress.
+- [ ] Harmony patch on `SteadyEnvironmentEffects.FinalDeteriorationRate` suppresses deterioration (sets to 0) if `CompSeasonable` is actively seasoning (multiplier > 0).
