@@ -31,11 +31,11 @@ This epic tracks the end-to-end implementation of the RimWood mod, from initial 
 
 ## Phase 2: Core Mechanics (C# & Advanced XML)
 
-### [ ] Task 4: Reverse-Rot Seasoning System
-- [ ] Create C# Project and setup references.
-- [ ] Implement `CompSeasonable` (based on `CompRottable` logic).
-- [ ] Apply `CompSeasonable` to Green Firewood.
-- [ ] Implement seasoning speed scaling by temperature.
+### [x] Task 4: Reverse-Rot Seasoning System
+- [x] Create C# Project and setup references.
+- [x] Implement `CompSeasonable` (based on `CompRottable` logic).
+- [x] Apply `CompSeasonable` to Green Firewood.
+- [x] Implement seasoning speed scaling by temperature.
 
 ### [ ] Task 5: The Woodpile & Woodshed
 - [ ] Define `Woodpile` building (Constructed from Green Firewood).
