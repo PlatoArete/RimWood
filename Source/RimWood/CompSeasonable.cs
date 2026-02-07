@@ -92,23 +92,36 @@ namespace RimWood
 
         /// <summary>
         /// Gets the method multiplier based on storage location.
-        /// MVP: Returns 1.0f if roofed (stockpile baseline), 0.0f if unroofed (stalled).
-        /// TODO (Task 5): Detect Woodpile (1.5x) and Woodshed (2.5x) buildings.
+        /// Checks for special storage buildings first, then falls back to roofed stockpile logic.
         /// Public visibility required for Harmony patch to check if item is actively seasoning.
         /// </summary>
         public float GetMethodMultiplier()
         {
-            // Check if item is roofed
+            // Check if stored in a special storage building (Woodshed)
+            // ParentHolder is set when items are stored in Building_Storage (shelves, etc.)
+            if (parent.ParentHolder is Building_Storage storage)
+            {
+                if (storage.def.defName == "RimWood_Woodshed")
+                {
+                    // Woodshed: 2.5x multiplier (fastest method, ~16 days at 20°C)
+                    return 2.5f;
+                }
+
+                // TODO (Future Task): Add Woodpile detection here (1.5x multiplier)
+                // if (storage.def.defName == "RimWood_Woodpile")
+                // {
+                //     return 1.5f;
+                // }
+            }
+
+            // Check if item is on ground under a roof (stockpile)
             if (parent.Spawned && parent.Map.roofGrid.Roofed(parent.Position))
             {
-                // MVP: Stockpile, roofed
+                // Roofed stockpile: 1.0x baseline (~40 days at 20°C)
                 return 1.0f;
             }
 
-            // TODO (Task 5): Check for Woodpile/Woodshed buildings here
-            // These buildings provide seasoning multipliers even without roof
-
-            // Unroofed, seasoning stalled
+            // Unroofed and not in special storage - seasoning stalled
             return 0.0f;
         }
 
