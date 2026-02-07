@@ -37,11 +37,9 @@ This epic tracks the end-to-end implementation of the RimWood mod, from initial 
 - [x] Apply `CompSeasonable` to Green Firewood.
 - [x] Implement seasoning speed scaling by temperature.
 
-### [ ] Task 5: The Woodpile & Woodshed
-- [ ] Define `Woodpile` building (Constructed from Green Firewood).
-- [ ] Implement "Unpack on Seasoned" logic or manual harvesting.
-- [ ] Define `Woodshed` storage building.
-- [ ] Implement Seasoning Speed Multipliers for specific buildings.
+### [x] Task 5: The Woodshed
+- [x] Define `Woodshed` storage building.
+- [x] Implement Seasoning Speed Multiplier (2.5x) for the Woodshed.
 
 ### [ ] Task 6: Earth Kiln
 - [ ] Define `EarthKiln` building.
