@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- Job: Load Earth Kiln -->
+  <JobDef>
+    <defName>RimWood_LoadEarthKiln</defName>
+    <driverClass>RimWood.JobDriver_LoadEarthKiln</driverClass>
+    <reportString>loading earth kiln.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+  <!-- Job: Extract Charcoal -->
+  <JobDef>
+    <defName>RimWood_ExtractCharcoal</defName>
+    <driverClass>RimWood.JobDriver_ExtractCharcoal</driverClass>
+    <reportString>extracting charcoal.</reportString>
+    <casualInterruptible>false</casualInterruptible>
+  </JobDef>
+
+</Defs>
