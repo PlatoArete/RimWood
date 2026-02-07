@@ -60,13 +60,23 @@ namespace RimWood
 
         /// <summary>
         /// Gets the method multiplier based on storage location.
-        /// MVP: Returns 1.0f (stockpile baseline).
-        /// TODO (Task 5): Detect Woodpile (1.5x) and Woodshed (2.5x).
+        /// MVP: Returns 1.0f if roofed (stockpile baseline), 0.0f if unroofed (stalled).
+        /// TODO (Task 5): Detect Woodpile (1.5x) and Woodshed (2.5x) buildings.
         /// </summary>
         private float GetMethodMultiplier()
         {
-            // MVP: Stockpile only
-            return 1.0f;
+            // Check if item is roofed
+            if (parent.Spawned && parent.Map.roofGrid.Roofed(parent.Position))
+            {
+                // MVP: Stockpile, roofed
+                return 1.0f;
+            }
+
+            // TODO (Task 5): Check for Woodpile/Woodshed buildings here
+            // These buildings provide seasoning multipliers even without roof
+
+            // Unroofed, seasoning stalled
+            return 0.0f;
         }
 
         /// <summary>
@@ -114,6 +124,7 @@ namespace RimWood
         /// <summary>
         /// Displays seasoning progress in the inspection pane.
         /// Shows percentage and estimated days remaining.
+        /// If stalled due to lack of roof, shows warning message.
         /// </summary>
         public override string CompInspectStringExtra()
         {
@@ -121,11 +132,17 @@ namespace RimWood
                 return null;
 
             float progressPercent = ((float)seasoningProgress / (float)Props.baseTicksToSeason) * 100f;
-            float ticksRemaining = Props.baseTicksToSeason - seasoningProgress;
-
-            // Calculate days remaining based on current conditions
             float tempMultiplier = GetTemperatureMultiplier();
             float methodMultiplier = GetMethodMultiplier();
+
+            // Check if stalled due to lack of roof
+            if (methodMultiplier == 0.0f)
+            {
+                return $"Seasoning: {progressPercent:F1}% - Stalled (Unsheltered)";
+            }
+
+            // Calculate days remaining based on current conditions
+            float ticksRemaining = Props.baseTicksToSeason - seasoningProgress;
             float effectiveTickRate = 250f * tempMultiplier * methodMultiplier;
 
             float daysRemaining = 0f;
