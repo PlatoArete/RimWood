@@ -11,14 +11,15 @@ namespace RimWood
     /// Prevents deterioration of items that are actively seasoning.
     /// </summary>
     [HarmonyPatch(typeof(SteadyEnvironmentEffects), nameof(SteadyEnvironmentEffects.FinalDeteriorationRate))]
-    [HarmonyPatch(new Type[] { typeof(Thing) })]
+    [HarmonyPatch(new Type[] { typeof(Thing), typeof(bool), typeof(bool), typeof(TerrainDef), typeof(List<string>) })]
     public static class SteadyEnvironmentEffects_FinalDeteriorationRate_Patch
     {
         /// <summary>
         /// Postfix patch that cancels deterioration for items actively seasoning.
         /// Logic: If item has CompSeasonable and is actively seasoning (roofed),
         /// set deterioration rate to 0 to prevent HP loss during the seasoning process.
-        /// Targets the 1-parameter overload which is the actual damage calculation path.
+        /// Targets the 5-parameter overload which is where actual deterioration calculation occurs.
+        /// Both the 2-parameter wrapper and direct calls flow through this method.
         /// </summary>
         [HarmonyPostfix]
         public static void Postfix(Thing t, ref float __result)
