@@ -18,9 +18,37 @@ namespace RimWood
         private int seasoningProgress = 0;
 
         /// <summary>
+        /// Smoothed temperature multiplier for stable display (exponential moving average).
+        /// Used for days remaining calculation to prevent UI jumpiness.
+        /// </summary>
+        private float smoothedTempMultiplier = 1.0f;
+
+        /// <summary>
+        /// Flag to track if smoothedTempMultiplier has been initialized.
+        /// Only used for freshly spawned items (not loaded from save).
+        /// </summary>
+        private bool smoothedTempInitialized = false;
+
+        /// <summary>
         /// Cached reference to CompProperties_Seasonable.
         /// </summary>
         public CompProperties_Seasonable Props => (CompProperties_Seasonable)props;
+
+        /// <summary>
+        /// Initialize smoothed temperature multiplier for freshly spawned items.
+        /// On load from save, smoothedTempMultiplier is restored via PostExposeData.
+        /// </summary>
+        public override void PostSpawnSetup(bool respawningAfterLoad)
+        {
+            base.PostSpawnSetup(respawningAfterLoad);
+
+            // Initialize smoothed temperature for freshly spawned items only
+            if (!respawningAfterLoad && !smoothedTempInitialized)
+            {
+                smoothedTempMultiplier = GetTemperatureMultiplier();
+                smoothedTempInitialized = true;
+            }
+        }
 
         /// <summary>
         /// Rare tick frequency (250 ticks) for performance optimization.
@@ -37,6 +65,10 @@ namespace RimWood
             float tempMultiplier = GetTemperatureMultiplier();
             float methodMultiplier = GetMethodMultiplier();
             float progressIncrement = 250f * tempMultiplier * methodMultiplier;
+
+            // Update smoothed temperature for display (exponential moving average)
+            // 80% previous value + 20% current value = smooth transition
+            smoothedTempMultiplier = smoothedTempMultiplier * 0.8f + tempMultiplier * 0.2f;
 
             seasoningProgress += Mathf.RoundToInt(progressIncrement);
 
@@ -133,7 +165,6 @@ namespace RimWood
                 return null;
 
             float progressPercent = ((float)seasoningProgress / (float)Props.baseTicksToSeason) * 100f;
-            float tempMultiplier = GetTemperatureMultiplier();
             float methodMultiplier = GetMethodMultiplier();
 
             // Check if stalled due to lack of roof
@@ -142,9 +173,10 @@ namespace RimWood
                 return $"Seasoning: {progressPercent:F1}% - Stalled (Unsheltered)";
             }
 
-            // Calculate days remaining based on current conditions
+            // Calculate days remaining using smoothed temperature for stable display
+            // Use actual temperature for progress calculation, but smoothed for display
             float ticksRemaining = Props.baseTicksToSeason - seasoningProgress;
-            float effectiveTickRate = 250f * tempMultiplier * methodMultiplier;
+            float effectiveTickRate = 250f * smoothedTempMultiplier * methodMultiplier;
 
             float daysRemaining = 0f;
             if (effectiveTickRate > 0)
@@ -174,12 +206,13 @@ namespace RimWood
         }
 
         /// <summary>
-        /// Persists seasoning progress across save/load.
+        /// Persists seasoning progress and smoothed temperature across save/load.
         /// </summary>
         public override void PostExposeData()
         {
             base.PostExposeData();
             Scribe_Values.Look(ref seasoningProgress, "seasoningProgress", 0);
+            Scribe_Values.Look(ref smoothedTempMultiplier, "smoothedTempMultiplier", 1.0f);
         }
     }
 }

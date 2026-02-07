@@ -40,4 +40,24 @@ namespace RimWood
             // This ensures wood left exposed will "rot" as intended by the design
         }
     }
+
+    /// <summary>
+    /// Suppresses the "Deteriorating: 0 / day" inspection line when items are actively seasoning.
+    /// Targets the 2-parameter display entry point to clear the reasons list.
+    /// </summary>
+    [HarmonyPatch(typeof(SteadyEnvironmentEffects), nameof(SteadyEnvironmentEffects.FinalDeteriorationRate))]
+    [HarmonyPatch(new Type[] { typeof(Thing), typeof(List<string>) })]
+    public static class SteadyEnvironmentEffects_FinalDeteriorationRate_Display_Patch
+    {
+        [HarmonyPostfix]
+        public static void Postfix(Thing t, List<string> reasons, ref float __result)
+        {
+            // Clear reasons list to suppress "Deteriorating: Outdoors (0/day)" inspect line
+            // when seasoning is active and deterioration is already zeroed by our 5-param patch
+            if (__result == 0f && t.TryGetComp<CompSeasonable>()?.GetMethodMultiplier() > 0f)
+            {
+                reasons?.Clear();
+            }
+        }
+    }
 }
