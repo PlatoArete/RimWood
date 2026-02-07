@@ -23,6 +23,11 @@
     <stackLimit>150</stackLimit>
     <resourceReadoutPriority>Middle</resourceReadoutPriority>
     <useHitPoints>true</useHitPoints>
+    <comps>
+      <li Class="RimWood.CompProperties_Seasonable">
+        <targetDef>RimWood_SeasonedFirewood</targetDef>
+      </li>
+    </comps>
   </ThingDef>
 
   <!-- Seasoned Firewood -->
