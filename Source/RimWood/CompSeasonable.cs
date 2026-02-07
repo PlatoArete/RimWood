@@ -149,8 +149,10 @@ namespace RimWood
             float daysRemaining = 0f;
             if (effectiveTickRate > 0)
             {
-                float totalTicksRemaining = ticksRemaining;
-                daysRemaining = totalTicksRemaining / 60000f; // 60,000 ticks per day
+                // Calculate how many rare ticks are needed at current rate
+                float rareTicksRemaining = ticksRemaining / effectiveTickRate;
+                // Convert rare ticks to days (250 ticks per rare tick, 60000 ticks per day)
+                daysRemaining = (rareTicksRemaining * 250f) / 60000f;
             }
 
             return $"Seasoning: {progressPercent:F1}% ({daysRemaining:F1} days remaining)";

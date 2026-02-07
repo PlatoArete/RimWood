@@ -6,6 +6,7 @@
     <defName>RimWood_GreenFirewood</defName>
     <label>green firewood</label>
     <description>Freshly cut firewood that has not yet seasoned. Burns with the same efficiency as seasoned wood but produces smoke and soot. Requires time to dry before becoming clean-burning seasoned firewood.</description>
+    <tickerType>Rare</tickerType>
     <graphicData>
       <texPath>Things/Item/Resource/WoodLog</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
