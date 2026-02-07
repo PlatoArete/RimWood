@@ -65,7 +65,7 @@
     <graphicData>
       <texPath>Things/Building/Furniture/Shelf</texPath>
       <graphicClass>Graphic_Multi</graphicClass>
-      <drawSize>(2,1)</drawSize>
+      <drawSize>(3,2)</drawSize>
       <damageData>
         <cornerTL>Damage/Corner</cornerTL>
         <cornerTR>Damage/Corner</cornerTR>

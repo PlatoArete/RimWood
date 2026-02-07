@@ -97,25 +97,30 @@ namespace RimWood
         /// </summary>
         public float GetMethodMultiplier()
         {
-            // Check if stored in a special storage building (Woodshed)
-            // ParentHolder is set when items are stored in Building_Storage (shelves, etc.)
-            if (parent.ParentHolder is Building_Storage storage)
+            if (!parent.Spawned)
+                return 0f;
+
+            // Check if item is sitting on a Woodshed storage building
+            // Items stored on shelves/storage buildings are spawned at the building's position,
+            // not held in the building's inventory, so we check for buildings at the same position
+            foreach (Thing thing in parent.Map.thingGrid.ThingsListAt(parent.Position))
             {
-                if (storage.def.defName == "RimWood_Woodshed")
+                if (thing is Building_Storage storage && storage.def.defName == "RimWood_Woodshed")
                 {
                     // Woodshed: 2.5x multiplier (fastest method, ~16 days at 20°C)
                     return 2.5f;
                 }
-
-                // TODO (Future Task): Add Woodpile detection here (1.5x multiplier)
-                // if (storage.def.defName == "RimWood_Woodpile")
-                // {
-                //     return 1.5f;
-                // }
             }
 
+            // TODO (Future Task): Add Woodpile detection here (1.5x multiplier)
+            // Building woodpile = parent.Position.GetFirstBuilding(parent.Map);
+            // if (woodpile != null && woodpile.def.defName == "RimWood_Woodpile")
+            // {
+            //     return 1.5f;
+            // }
+
             // Check if item is on ground under a roof (stockpile)
-            if (parent.Spawned && parent.Map.roofGrid.Roofed(parent.Position))
+            if (parent.Map.roofGrid.Roofed(parent.Position))
             {
                 // Roofed stockpile: 1.0x baseline (~40 days at 20°C)
                 return 1.0f;
