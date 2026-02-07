@@ -8,7 +8,6 @@
     <description>Process wood logs into green firewood. The firewood will need to season before burning cleanly.</description>
     <jobString>Processing logs into firewood.</jobString>
     <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
-    <effectWorking>Cutstone</effectWorking>
     <soundWorking>Recipe_Machining</soundWorking>
     <workAmount>450</workAmount>
     <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
@@ -43,7 +42,6 @@
     <description>Process wood logs into absorbent wood fibre pads for use in passive coolers.</description>
     <jobString>Processing logs into fibre pads.</jobString>
     <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
-    <effectWorking>Cutstone</effectWorking>
     <soundWorking>Recipe_Machining</soundWorking>
     <workAmount>450</workAmount>
     <unfinishedThingDef>UnfinishedComponent</unfinishedThingDef>
