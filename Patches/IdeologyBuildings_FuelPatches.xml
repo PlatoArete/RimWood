@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- Conditional patches for Ideology DLC buildings -->
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Ludeon.RimWorld.Ideology</li>
+    </mods>
+    <match>
+      <Operation Class="PatchOperationSequence">
+        <operations>
+
+          <!-- Brazier: Add RimWood Firewood only (no charcoal for decorative braziers) -->
+          <li Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Brazier"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter/categories</xpath>
+            <value>
+              <li>RimWood_Firewood</li>
+            </value>
+          </li>
+
+          <!-- Darktorch: Add RimWood Firewood only -->
+          <li Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="Darktorch"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter/categories</xpath>
+            <value>
+              <li>RimWood_Firewood</li>
+            </value>
+          </li>
+
+          <!-- Darklight Brazier: Add RimWood Firewood only -->
+          <li Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="DarklightBrazier"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter/categories</xpath>
+            <value>
+              <li>RimWood_Firewood</li>
+            </value>
+          </li>
+
+        </operations>
+      </Operation>
+    </match>
+  </Operation>
+
+</Patch>

@@ -1,9 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
+
+  <!-- Parent category for all RimWood fuels -->
   <ThingCategoryDef>
     <defName>RimWood_Fuel</defName>
     <label>RimWood fuel</label>
     <parent>Manufactured</parent>
     <iconPath>UI/Icons/ThingCategories/RimWoodFuel</iconPath>
   </ThingCategoryDef>
+
+  <!-- Firewood subcategory (green + seasoned) -->
+  <ThingCategoryDef>
+    <defName>RimWood_Firewood</defName>
+    <label>firewood</label>
+    <parent>RimWood_Fuel</parent>
+  </ThingCategoryDef>
+
+  <!-- Charcoal subcategory -->
+  <ThingCategoryDef>
+    <defName>RimWood_Charcoal</defName>
+    <label>charcoal</label>
+    <parent>RimWood_Fuel</parent>
+  </ThingCategoryDef>
+
+  <!-- Wood fibre pads subcategory -->
+  <ThingCategoryDef>
+    <defName>RimWood_FibrePads</defName>
+    <label>wood fibre pads</label>
+    <parent>RimWood_Fuel</parent>
+  </ThingCategoryDef>
+
 </Defs>

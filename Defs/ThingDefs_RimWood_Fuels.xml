@@ -19,7 +19,7 @@
       <DeteriorationRate>2.0</DeteriorationRate>
     </statBases>
     <thingCategories>
-      <li>RimWood_Fuel</li>
+      <li>RimWood_Firewood</li>
     </thingCategories>
     <stackLimit>150</stackLimit>
     <resourceReadoutPriority>Middle</resourceReadoutPriority>
@@ -48,7 +48,7 @@
       <DeteriorationRate>1.0</DeteriorationRate>
     </statBases>
     <thingCategories>
-      <li>RimWood_Fuel</li>
+      <li>RimWood_Firewood</li>
     </thingCategories>
     <stackLimit>150</stackLimit>
     <resourceReadoutPriority>Middle</resourceReadoutPriority>
@@ -73,7 +73,7 @@
       <DeteriorationRate>0.5</DeteriorationRate>
     </statBases>
     <thingCategories>
-      <li>RimWood_Fuel</li>
+      <li>RimWood_Charcoal</li>
     </thingCategories>
     <stackLimit>200</stackLimit>
     <resourceReadoutPriority>Middle</resourceReadoutPriority>
@@ -97,7 +97,7 @@
       <DeteriorationRate>1.5</DeteriorationRate>
     </statBases>
     <thingCategories>
-      <li>RimWood_Fuel</li>
+      <li>RimWood_FibrePads</li>
     </thingCategories>
     <stackLimit>150</stackLimit>
     <resourceReadoutPriority>Middle</resourceReadoutPriority>
