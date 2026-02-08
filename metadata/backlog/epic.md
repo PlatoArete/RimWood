@@ -41,9 +41,9 @@ This epic tracks the end-to-end implementation of the RimWood mod, from initial 
 - [x] Define `Woodshed` storage building.
 - [x] Implement Seasoning Speed Multiplier (2.5x) for the Woodshed.
 
-### [ ] Task 6: Earth Kiln
-- [ ] Define `EarthKiln` building.
-- [ ] Implement processing logic (Mech gestator style or standard bill).
+### [x] Task 6: Earth Kiln
+- [x] Define `EarthKiln` building.
+- [x] Implement processing logic (Mech gestator style or standard bill).
 
 ---
 

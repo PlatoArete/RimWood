@@ -121,6 +121,7 @@
     <label>earth kiln</label>
     <description>A traditional outdoor charcoal-making structure. Load seasoned firewood and wait 6 days for it to slowly carbonize into high-quality charcoal. The kiln uses controlled airflow to burn wood at low oxygen, transforming it into a superior fuel. Must be built outdoors for safety.</description>
     <thingClass>RimWood.Building_EarthKiln</thingClass>
+    <tickerType>Rare</tickerType>
     <graphicData>
       <texPath>Things/Building/Production/RimWood_EarthKiln</texPath>
       <graphicClass>Graphic_Multi</graphicClass>

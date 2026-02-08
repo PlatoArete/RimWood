@@ -38,7 +38,7 @@ namespace RimWood
                 Thing firewood = GenClosest.ClosestThingReachable(
                     pawn.Position,
                     pawn.Map,
-                    ThingRequest.ForDef(ThingDef.Named("RimWood_SeasonedFirewood")),
+                    ThingRequest.ForDef(ThingDefOf.RimWood_SeasonedFirewood),
                     PathEndMode.ClosestTouch,
                     TraverseParms.For(pawn),
                     9999f,

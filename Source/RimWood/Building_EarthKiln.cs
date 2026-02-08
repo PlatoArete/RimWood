@@ -81,7 +81,7 @@ namespace RimWood
             }
 
             // Create charcoal
-            Thing charcoal = ThingMaker.MakeThing(ThingDef.Named("RimWood_Charcoal"));
+            Thing charcoal = ThingMaker.MakeThing(ThingDefOf.RimWood_Charcoal);
             charcoal.stackCount = CharcoalOutput;
 
             // Reset kiln
