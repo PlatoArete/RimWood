@@ -98,30 +98,32 @@ namespace RimWood
         public override string GetInspectString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append(base.GetInspectString());
+            string baseString = base.GetInspectString();
+            if (!baseString.NullOrEmpty())
+                sb.Append(baseString);
 
+            string status;
             if (Empty)
             {
-                sb.AppendLine();
-                sb.Append("Empty - Load 12 seasoned firewood to begin");
+                status = "Empty - Load 12 seasoned firewood to begin";
             }
             else if (firewoodCount < MaxCapacity)
             {
-                sb.AppendLine();
-                sb.Append($"Loaded: {firewoodCount}/{MaxCapacity} seasoned firewood");
+                status = $"Loaded: {firewoodCount}/{MaxCapacity} seasoned firewood";
             }
             else if (Finished)
             {
-                sb.AppendLine();
-                sb.Append("Carbonization complete - Extract charcoal");
+                status = "Carbonization complete - Extract charcoal";
             }
             else
             {
-                // In progress
                 float daysRemaining = (TicksToCarbonize - carbonizationProgress) / 60000f;
-                sb.AppendLine();
-                sb.Append($"Carbonizing: {ProgressPercent:P0} ({daysRemaining:F1} days remaining)");
+                status = $"Carbonizing: {ProgressPercent:P0} ({daysRemaining:F1} days remaining)";
             }
+
+            if (sb.Length > 0)
+                sb.AppendLine();
+            sb.Append(status);
 
             return sb.ToString().TrimEndNewlines();
         }
