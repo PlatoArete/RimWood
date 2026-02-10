@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- Enable per-building fuel filter UI on all refuelable vanilla buildings.           -->
+  <!-- showFilter=true renders a filter widget in the inspector pane, allowing players   -->
+  <!-- to configure which fuels are accepted per-building.                               -->
+  <!-- The global "Allow logs in fuel buildings" mod setting is enforced automatically   -->
+  <!-- by the ThingFilter.Allows Harmony patch — WoodLog appears grayed out when         -->
+  <!-- the setting is disabled.                                                           -->
+
+  <!-- Campfire -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Campfire"]/comps/li[@Class="CompProperties_Refuelable"]</xpath>
+    <value>
+      <showFilter>true</showFilter>
+    </value>
+  </Operation>
+
+  <!-- Fueled Smithy -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FueledSmithy"]/comps/li[@Class="CompProperties_Refuelable"]</xpath>
+    <value>
+      <showFilter>true</showFilter>
+    </value>
+  </Operation>
+
+  <!-- Fueled Stove -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FueledStove"]/comps/li[@Class="CompProperties_Refuelable"]</xpath>
+    <value>
+      <showFilter>true</showFilter>
+    </value>
+  </Operation>
+
+  <!-- Wood-Fired Generator -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="WoodFiredGenerator"]/comps/li[@Class="CompProperties_Refuelable"]</xpath>
+    <value>
+      <showFilter>true</showFilter>
+    </value>
+  </Operation>
+
+  <!-- TorchBase (abstract parent — covers TorchLamp and any other inheriting defs) -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[@Name="TorchBase"]/comps/li[@Class="CompProperties_Refuelable"]</xpath>
+    <value>
+      <showFilter>true</showFilter>
+    </value>
+  </Operation>
+
+  <!-- TorchWallLamp (uses Inherit="False" so does not get TorchBase patches) -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="TorchWallLamp"]/comps/li[@Class="CompProperties_Refuelable"]</xpath>
+    <value>
+      <showFilter>true</showFilter>
+    </value>
+  </Operation>
+
+  <!-- Passive Cooler -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="PassiveCooler"]/comps/li[@Class="CompProperties_Refuelable"]</xpath>
+    <value>
+      <showFilter>true</showFilter>
+    </value>
+  </Operation>
+
+</Patch>

@@ -6,13 +6,24 @@
     <mods>
       <li>Ludeon.RimWorld.Biotech</li>
     </mods>
-    <match Class="PatchOperationAdd">
-      <xpath>Defs/ThingDef[defName="BloodTorch"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter</xpath>
-      <value>
-        <categories>
-          <li>RimWood_Firewood</li>
-        </categories>
-      </value>
+    <match Class="PatchOperationSequence">
+      <operations>
+        <!-- Blood Torch: Add RimWood Firewood category and showFilter -->
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="BloodTorch"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter</xpath>
+          <value>
+            <categories>
+              <li>RimWood_Firewood</li>
+            </categories>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="BloodTorch"]/comps/li[@Class="CompProperties_Refuelable"]</xpath>
+          <value>
+            <showFilter>true</showFilter>
+          </value>
+        </li>
+      </operations>
     </match>
   </Operation>
 

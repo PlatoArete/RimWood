@@ -9,7 +9,7 @@
     <match Class="PatchOperationSequence">
       <operations>
 
-        <!-- Brazier: Add RimWood Firewood category only -->
+        <!-- Brazier: Add RimWood Firewood category and showFilter -->
         <li Class="PatchOperationAdd">
           <xpath>Defs/ThingDef[defName="Brazier"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter</xpath>
           <value>
@@ -18,8 +18,14 @@
             </categories>
           </value>
         </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="Brazier"]/comps/li[@Class="CompProperties_Refuelable"]</xpath>
+          <value>
+            <showFilter>true</showFilter>
+          </value>
+        </li>
 
-        <!-- Darktorch: Add RimWood Firewood category only -->
+        <!-- Darktorch: Add RimWood Firewood category and showFilter -->
         <li Class="PatchOperationAdd">
           <xpath>Defs/ThingDef[defName="Darktorch"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter</xpath>
           <value>
@@ -28,14 +34,26 @@
             </categories>
           </value>
         </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="Darktorch"]/comps/li[@Class="CompProperties_Refuelable"]</xpath>
+          <value>
+            <showFilter>true</showFilter>
+          </value>
+        </li>
 
-        <!-- Darklight Brazier: Add RimWood Firewood category only -->
+        <!-- Darklight Brazier: Add RimWood Firewood category and showFilter -->
         <li Class="PatchOperationAdd">
           <xpath>Defs/ThingDef[defName="DarklightBrazier"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter</xpath>
           <value>
             <categories>
               <li>RimWood_Firewood</li>
             </categories>
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="DarklightBrazier"]/comps/li[@Class="CompProperties_Refuelable"]</xpath>
+          <value>
+            <showFilter>true</showFilter>
           </value>
         </li>
 
