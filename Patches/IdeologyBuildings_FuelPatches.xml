@@ -9,7 +9,7 @@
     <match Class="PatchOperationSequence">
       <operations>
 
-        <!-- Brazier: Add RimWood Firewood category and showFilter -->
+        <!-- Brazier: Add RimWood Firewood category and per-building fuel filter comp -->
         <li Class="PatchOperationAdd">
           <xpath>Defs/ThingDef[defName="Brazier"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter</xpath>
           <value>
@@ -19,13 +19,13 @@
           </value>
         </li>
         <li Class="PatchOperationAdd">
-          <xpath>Defs/ThingDef[defName="Brazier"]/comps/li[@Class="CompProperties_Refuelable"]</xpath>
+          <xpath>Defs/ThingDef[defName="Brazier"]/comps</xpath>
           <value>
-            <showFilter>true</showFilter>
+            <li Class="RimWood.CompProperties_FuelFilter" />
           </value>
         </li>
 
-        <!-- Darktorch: Add RimWood Firewood category and showFilter -->
+        <!-- Darktorch: Add RimWood Firewood category and per-building fuel filter comp -->
         <li Class="PatchOperationAdd">
           <xpath>Defs/ThingDef[defName="Darktorch"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter</xpath>
           <value>
@@ -35,13 +35,13 @@
           </value>
         </li>
         <li Class="PatchOperationAdd">
-          <xpath>Defs/ThingDef[defName="Darktorch"]/comps/li[@Class="CompProperties_Refuelable"]</xpath>
+          <xpath>Defs/ThingDef[defName="Darktorch"]/comps</xpath>
           <value>
-            <showFilter>true</showFilter>
+            <li Class="RimWood.CompProperties_FuelFilter" />
           </value>
         </li>
 
-        <!-- Darklight Brazier: Add RimWood Firewood category and showFilter -->
+        <!-- Darklight Brazier: Add RimWood Firewood category and per-building fuel filter comp -->
         <li Class="PatchOperationAdd">
           <xpath>Defs/ThingDef[defName="DarklightBrazier"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter</xpath>
           <value>
@@ -51,9 +51,9 @@
           </value>
         </li>
         <li Class="PatchOperationAdd">
-          <xpath>Defs/ThingDef[defName="DarklightBrazier"]/comps/li[@Class="CompProperties_Refuelable"]</xpath>
+          <xpath>Defs/ThingDef[defName="DarklightBrazier"]/comps</xpath>
           <value>
-            <showFilter>true</showFilter>
+            <li Class="RimWood.CompProperties_FuelFilter" />
           </value>
         </li>
 

@@ -8,7 +8,7 @@
     </mods>
     <match Class="PatchOperationSequence">
       <operations>
-        <!-- Blood Torch: Add RimWood Firewood category and showFilter -->
+        <!-- Blood Torch: Add RimWood Firewood category and per-building fuel filter comp -->
         <li Class="PatchOperationAdd">
           <xpath>Defs/ThingDef[defName="BloodTorch"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter</xpath>
           <value>
@@ -18,9 +18,9 @@
           </value>
         </li>
         <li Class="PatchOperationAdd">
-          <xpath>Defs/ThingDef[defName="BloodTorch"]/comps/li[@Class="CompProperties_Refuelable"]</xpath>
+          <xpath>Defs/ThingDef[defName="BloodTorch"]/comps</xpath>
           <value>
-            <showFilter>true</showFilter>
+            <li Class="RimWood.CompProperties_FuelFilter" />
           </value>
         </li>
       </operations>
