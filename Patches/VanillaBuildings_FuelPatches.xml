@@ -34,9 +34,10 @@
     </value>
   </Operation>
 
-  <!-- Torch Lamp: Add RimWood Firewood category only -->
+  <!-- TorchBase (covers TorchLamp): Add categories node with RimWood Firewood -->
+  <!-- Note: TorchLamp inherits from TorchBase which has fuelFilter/thingDefs, so we add categories alongside it -->
   <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[defName="TorchLamp"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter</xpath>
+    <xpath>Defs/ThingDef[@Name="TorchBase"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter</xpath>
     <value>
       <categories>
         <li>RimWood_Firewood</li>
@@ -44,9 +45,10 @@
     </value>
   </Operation>
 
-  <!-- Standing Lamp (Wall Torch): Add RimWood Firewood category only -->
+  <!-- TorchWallLamp: Add categories node with RimWood Firewood -->
+  <!-- Note: TorchWallLamp uses Inherit="False" so it doesn't get TorchBase patches, must be patched separately -->
   <Operation Class="PatchOperationAdd">
-    <xpath>Defs/ThingDef[defName="StandingLamp_Red"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter</xpath>
+    <xpath>Defs/ThingDef[defName="TorchWallLamp"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter</xpath>
     <value>
       <categories>
         <li>RimWood_Firewood</li>
