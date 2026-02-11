@@ -53,9 +53,9 @@ This epic tracks the end-to-end implementation of the RimWood mod, from initial 
 - [x] Patch `Campfire`, `Stove`, `Smithy` to accept new fuels.
 - [x] Implement `Logs On/Off` mod setting logic.
 
-### [ ] Task 7.5: Per-building Fuel Filters
-- [ ] Enable `showFilter` in building fuel comps.
-- [ ] Add player-facing fuel selection UI.
+### [x] Task 7.5: Per-building Fuel Filters
+- [x] Enable `showFilter` in building fuel comps.
+- [x] Add player-facing fuel selection UI.
 
 ### [ ] Task 8: Tree Felling Byproducts
 - [ ] Harmony patch for tree felling to drop Green Firewood.

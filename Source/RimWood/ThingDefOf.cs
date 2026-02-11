@@ -10,6 +10,7 @@ namespace RimWood
     [DefOf]
     public static class ThingDefOf
     {
+        public static ThingDef RimWood_GreenFirewood;
         public static ThingDef RimWood_SeasonedFirewood;
         public static ThingDef RimWood_Charcoal;
 
