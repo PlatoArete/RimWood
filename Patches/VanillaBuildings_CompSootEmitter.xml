@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <!-- Add CompProperties_SootEmitter to all vanilla refuelable buildings.          -->
+  <!-- This enables soot emission behavior on fueled vanilla buildings.             -->
+
+  <!-- Campfire -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="Campfire"]/comps</xpath>
+    <value>
+      <li Class="RimWood.CompProperties_SootEmitter" />
+    </value>
+  </Operation>
+
+  <!-- Fueled Smithy -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FueledSmithy"]/comps</xpath>
+    <value>
+      <li Class="RimWood.CompProperties_SootEmitter" />
+    </value>
+  </Operation>
+
+  <!-- Fueled Stove -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="FueledStove"]/comps</xpath>
+    <value>
+      <li Class="RimWood.CompProperties_SootEmitter" />
+    </value>
+  </Operation>
+
+  <!-- Wood-Fired Generator -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="WoodFiredGenerator"]/comps</xpath>
+    <value>
+      <li Class="RimWood.CompProperties_SootEmitter" />
+    </value>
+  </Operation>
+
+  <!-- TorchBase (abstract parent — covers TorchLamp and any other inheriting defs) -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[@Name="TorchBase"]/comps</xpath>
+    <value>
+      <li Class="RimWood.CompProperties_SootEmitter" />
+    </value>
+  </Operation>
+
+  <!-- TorchWallLamp (uses Inherit="False" so does not inherit from TorchBase) -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="TorchWallLamp"]/comps</xpath>
+    <value>
+      <li Class="RimWood.CompProperties_SootEmitter" />
+    </value>
+  </Operation>
+
+  <!-- Passive Cooler -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/ThingDef[defName="PassiveCooler"]/comps</xpath>
+    <value>
+      <li Class="RimWood.CompProperties_SootEmitter" />
+    </value>
+  </Operation>
+
+</Patch>

@@ -57,8 +57,8 @@ This epic tracks the end-to-end implementation of the RimWood mod, from initial 
 - [x] Enable `showFilter` in building fuel comps.
 - [x] Add player-facing fuel selection UI.
 
-### [ ] Task 8: Tree Felling Byproducts
-- [ ] Harmony patch for tree felling to drop Green Firewood.
+### [x] Task 8: Tree Felling Byproducts
+- [x] Harmony patch for tree felling to drop Green Firewood.
 
 ### [ ] Task 9: Visuals & Soot
 - [ ] Implement "Soot Filth" generation for Green Firewood.

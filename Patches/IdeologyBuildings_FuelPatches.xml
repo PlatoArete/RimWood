@@ -9,7 +9,7 @@
     <match Class="PatchOperationSequence">
       <operations>
 
-        <!-- Brazier: Add RimWood Firewood category and per-building fuel filter comp -->
+        <!-- Brazier: Add RimWood Firewood category, fuel filter comp, and soot emitter comp -->
         <li Class="PatchOperationAdd">
           <xpath>Defs/ThingDef[defName="Brazier"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter</xpath>
           <value>
@@ -24,8 +24,14 @@
             <li Class="RimWood.CompProperties_FuelFilter" />
           </value>
         </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="Brazier"]/comps</xpath>
+          <value>
+            <li Class="RimWood.CompProperties_SootEmitter" />
+          </value>
+        </li>
 
-        <!-- Darktorch: Add RimWood Firewood category and per-building fuel filter comp -->
+        <!-- Darktorch: Add RimWood Firewood category, fuel filter comp, and soot emitter comp -->
         <li Class="PatchOperationAdd">
           <xpath>Defs/ThingDef[defName="Darktorch"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter</xpath>
           <value>
@@ -40,8 +46,14 @@
             <li Class="RimWood.CompProperties_FuelFilter" />
           </value>
         </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="Darktorch"]/comps</xpath>
+          <value>
+            <li Class="RimWood.CompProperties_SootEmitter" />
+          </value>
+        </li>
 
-        <!-- Darklight Brazier: Add RimWood Firewood category and per-building fuel filter comp -->
+        <!-- Darklight Brazier: Add RimWood Firewood category, fuel filter comp, and soot emitter comp -->
         <li Class="PatchOperationAdd">
           <xpath>Defs/ThingDef[defName="DarklightBrazier"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter</xpath>
           <value>
@@ -54,6 +66,12 @@
           <xpath>Defs/ThingDef[defName="DarklightBrazier"]/comps</xpath>
           <value>
             <li Class="RimWood.CompProperties_FuelFilter" />
+          </value>
+        </li>
+        <li Class="PatchOperationAdd">
+          <xpath>Defs/ThingDef[defName="DarklightBrazier"]/comps</xpath>
+          <value>
+            <li Class="RimWood.CompProperties_SootEmitter" />
           </value>
         </li>
 

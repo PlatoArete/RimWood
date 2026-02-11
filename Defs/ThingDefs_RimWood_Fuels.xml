@@ -17,6 +17,7 @@
       <Mass>0.38</Mass>
       <Flammability>1.0</Flammability>
       <DeteriorationRate>2.0</DeteriorationRate>
+      <Beauty>-1</Beauty>
     </statBases>
     <thingCategories>
       <li>RimWood_Firewood</li>
